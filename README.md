@@ -10,7 +10,7 @@ Ever used [MS Paint](https://en.wikipedia.org/wiki/Microsoft_Paint)? It was a ve
 
 ### Setup
 
-You may have noticed that there is no JavaScript. What is there is plenty of html and css. Let's look around, shall we?
+You may have noticed that there is no JavaScript. But there is some HTML and CSS. Let's look around, shall we?
 
 
 ### We Shall
@@ -20,18 +20,28 @@ First, the HTML. We have three sections:
 2. The brush.
 3. The canvas.
 
-We'll be checking the state of those three things as the user interacts with them. Pay attention to the logical flow of the app, and if you need to see Colin's version for logical flow reference, it's at [bs-paint.surge.sh](https://bs-paint.surge.sh).
+We'll be checking what *classes* are present on those items in order to know what to do when the user clicks something. Did they click a color on the palette? The brush should get that color. Did they click the canvas? That canvas square should get the brush's color. Pay careful attention to the logical flow of the app, and if you need to see the solution version for logical flow reference, it's at [bs-paint.surge.sh](http://bs-paint-solution.surge.sh/).
 
-Did you notice how all three sections listed above have `.color-${n}` classes on them or their elements? That brings us to the CSS, which has, those classes, but no actual colors for them. Put some code in there to give each color a background-color, but keep the same name. That way we can change what `color-3` is any time we want, without having to change the name throughout the code from `purple` to `mauve`. Additionally, this drives home that we're not changing CSS directly... just classes!
+Did you notice how all three sections listed above have `.color-${n}` classes on them or their elements? That brings us to the CSS, which has those classes, but no actual color assigned to them. Put some code in there to give `color-1` and `color-2` and so on each a background-color... but keep the same class names. That way we can change what `color-3` is any time we want, without having to change the name throughout the code from `purple` to `mauve`. Additionally, this drives home that we're not changing CSS directly... just classes!
 
-Once you've got those colors defined, we're on to the real meat of it: the JavaScript.
+Once you've got those colors defined, we're on to laying things out.
+
+
+### Now For Layout
+
+Our page is supposed to look like the page linked to above. It certainly does not!
+
+There are two main layout challenges for this assignment:
+
+1. Center everything along the vertical axis. Sounds like a Flexbox problem!
+2. Put the *100* divs in `.canvas` in a 10x10 grid. Sounds like a problem for... well, Grid, obviously!
+
+**Layout is a large part of this assignment**, which is why we've been working on it so hard. But feel free to switch back and forth between that and the JavaScript below.
 
 
 ### BS Paint's JavaScript
 
-There is none!
-
-It will be your job to connect all the pieces logically, with event listeners and DOM manipulation galore.
+It will be JavaScript's job to connect all the pieces logically, with event listeners and DOM manipulation galore. **We'll be using class tools to change the CSS here exclusively.** Do *not* use any `style` attirbutes!
 
 Here are some (possibly new to you!) tools you can use:
 
@@ -42,7 +52,7 @@ Here are some (possibly new to you!) tools you can use:
 
 ### A Note On Canvas Size
 
-We have a 10x10 canvas right now, but you can add a bunch more using a couple different methods:
+We have a 10x10 canvas right now, but you can add more if you'd like using a couple different methods:
 
 1. Add a bunch more to the html (think about using an emmet abbreviation), then adjust the grid css in `.canvas` in `style.css`.
 2. Add the `div`s via JavaScript. This way's more fun!
