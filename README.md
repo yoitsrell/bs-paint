@@ -5,7 +5,7 @@ A very simple paint program.
 
 ### Introduction
 
-Ever used [MS Paint](https://en.wikipedia.org/wiki/Microsoft_Paint)? It was a very simple paint program for Windows. We're going to take that limited-feature app and implement even fewer features for a fake MS Paint. Welcome to... BS Paint!
+Ever used [MS Paint](https://en.wikipedia.org/wiki/Microsoft_Paint)? It was a very simple paint program for Windows. We're going to take that limited-feature app and implement even fewer features for a fake MS Paint. Welcome to... BudgetSoft Paint!
 
 
 ### Setup
@@ -22,9 +22,9 @@ First, the HTML. We have three sections:
 
 We'll be checking the state of those three things as the user interacts with them. Pay attention to the logical flow of the app, and if you need to see Colin's version for logical flow reference, it's at [bs-paint.surge.sh](https://bs-paint.surge.sh).
 
-Did you notice how all three sections listed above have `.color-${n}` classes on them or their elements? That brings us to the CSS, which has... none of those classes. You can pick your own colors and define them using those classes, or even rename the classes to match the colors if you want. You'll need at least four of them, and one for a blank color, but you can have as many colors as you want.
+Did you notice how all three sections listed above have `.color-${n}` classes on them or their elements? That brings us to the CSS, which has, those classes, but no actual colors for them. Put some code in there to give each color a background-color, but keep the same name. That way we can change what `color-3` is any time we want, without having to change the name throughout the code from `purple` to `mauve`. Additionally, this drives home that we're not changing CSS directly... just classes!
 
-Now on to the real meat of it: the JavaScript.
+Once you've got those colors defined, we're on to the real meat of it: the JavaScript.
 
 
 ### BS Paint's JavaScript
@@ -42,10 +42,11 @@ Here are some (possibly new to you!) tools you can use:
 
 ### A Note On Canvas Size
 
-We have a 3x3 canvas right now, but you can either add a bunch more using a couple different methods:
+We have a 10x10 canvas right now, but you can add a bunch more using a couple different methods:
 
 1. Add a bunch more to the html (think about using an emmet abbreviation), then adjust the grid css in `.canvas` in `style.css`.
-2. Add the `div`s in the JavaScript. This way's more fun!
+2. Add the `div`s via JavaScript. This way's more fun!
+
 
 ### Stretch Goals
 
@@ -53,10 +54,16 @@ There are a lot of different directions you could take this project to stretch y
 
 * Add more colors. You may have to adjust the layout to continue to have the palette look reasonable.
 * Add a Dark Mode toggle that will change the general theme and also the colors to match.
-* Increase the number of squares on the canvas. You may have to adjust the size of the squares (or canvas). There is no real upper limit! I guess the number of pixels available to the user? Yeah, that.
+* Increase the number of squares on the canvas. You may have to adjust the size of the squares (or canvas). There is no real upper limit! I guess the number of pixels available to the user? Yeah, that's an actual upper limit.
 * Add an easter egg message to `.message` that activates when the user draws a particular pattern. Checking for a particular pattern can be difficult if you make too complex a one, so start with something simple and expand from there to as weird an easter egg as you can.
 * Add some more tools besides a simple paintbrush. Here are some examples, but feel free to come up with your own ideas!
   * A tool that colors a square and its neighbors.
   * A tool that combines colors. For example, if the color is red and you paint it yellow with this tool, you get orange.
   * A tool that allows you to select multiple squares for painting on all of them at once.
-* Allow the user to dynamically allocate the size of the canvas. You'll have to take in the desired canvas size from the user, then make the right number of squares, making sure you don't make the canvas itself larger than you want it.
+* Allow the user to dynamically allocate the size of the canvas. You'll have to take in the desired canvas size from the user (an input box, maybe?), then make the right number of squares dynamically.
+* More stretch goals to come maybe, but that's a pretty big list right there.
+
+
+### Good Luck!
+
+And may the BS be with you.
