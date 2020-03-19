@@ -58,8 +58,13 @@
 
 .square {
   transition: 0.5s;
+  border: .02px dotted black;
 }
 
+.color-0{
+  background-color: white;
+  /* visibility: hidden; */
+}
 .color-1 {
 background-color: green;
 }
@@ -77,5 +82,5 @@ background-color: yellow;
 }
 
 .color-5 {
-background-color:white;
+background-color:purple;
 }

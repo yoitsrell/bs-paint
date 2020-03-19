@@ -1,8 +1,21 @@
-const colorOne = document.querySelector(".palette-color color-1")
-const colorTwo = document.querySelector(".palette-color color-2")
-const colorThree = document.querySelector(".palette-color color-3")
-const colorFour = document.querySelector(".palette-color color-4")
-const colorFive = document.querySelector(".palette-color color-5")
+const blank = document.querySelector(".palette-color.color-0")
+const colorOne = document.querySelector(".palette-color.color-1")
+const colorTwo = document.querySelector(".palette-color.color-2")
+const colorThree = document.querySelector(".palette-color.color-3")
+const colorFour = document.querySelector(".palette-color.color-4")
+const colorFive = document.querySelector(".palette-color.color-5")
+const brushColor = document.querySelector(".current-brush")
+const pickSquare = document.querySelectorAll(".square") //query selector all -_-
+
+
+
+const changeCanvas = function(event){
+    event.target.classList.replace(event.target.classList[1], brushColor.classList[1])
+}
+
+for (const square of pickSquare) {
+    square.addEventListener('click', changeCanvas);
+}
 
 const  brushPaintSwap1 = function(){
     let swapColor = document.querySelector(".current-brush");
