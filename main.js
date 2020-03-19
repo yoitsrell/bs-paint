@@ -10,7 +10,7 @@ const pickSquare = document.querySelectorAll(".square") //query selector all -_-
 
 const changeCanvas = function(event){
     event.target.classList.replace(event.target.classList[1], brushColor.classList[1])
-}
+} //needed target
 
 for (const square of pickSquare) {
     square.addEventListener('click', changeCanvas);
