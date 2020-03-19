@@ -8,7 +8,6 @@ const brushColor = document.querySelector(".current-brush")
 const pickSquare = document.querySelectorAll(".square") //query selector all -_-
 
 
-
 const changeCanvas = function(event){
     event.target.classList.replace(event.target.classList[1], brushColor.classList[1])
 }

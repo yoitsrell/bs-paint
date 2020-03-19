@@ -41,12 +41,16 @@
   height: 30px;
 }
 
-.current-brush, .palette-color {
+.current-brush, .palette-color{
   width: 30px;
   height: 30px;
   border: 1px solid black;
 }
-
+.reset{
+  display:grid;
+  padding-top: 5px;
+  justify-items: center;
+}
 .canvas {
   display: grid;
   grid-template-rows: repeat(10, 1fr);
@@ -54,6 +58,8 @@
   height: 300px;
   width: 300px;
   border: 1px solid black;
+  justify-items: stretch;
+  align-items: stretch
 }
 
 .square {
